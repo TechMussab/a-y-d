@@ -41,7 +41,6 @@ function useRequestRest() {
           doneCallback();
         }
       } catch (error) {
-        console.log("error thrown inside delayFunction", error);
         if (doneCallback) {
           doneCallback();
         }
@@ -64,7 +63,6 @@ function useRequestRest() {
           doneCallback();
         }
       } catch (error) {
-        console.log("error thrown inside delayFunction", error);
         if (doneCallback) {
           doneCallback();
         }
@@ -91,7 +89,6 @@ function useRequestRest() {
           doneCallback();
         }
       } catch (error) {
-        console.log("error thrown inside delayFunction", error);
         if (doneCallback) {
           doneCallback();
         }

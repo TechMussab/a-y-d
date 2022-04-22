@@ -4,7 +4,6 @@ import useApiRequest, {REQUEST_STATUS} from "../hooks/useApiRequest";
 import {Modal} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import React, {useState} from "react";
-import ReactDOM from 'react-dom';
 function MyVerticallyCenteredModal(props) {
     return (
         <Modal
@@ -33,11 +32,6 @@ function MyVerticallyCenteredModal(props) {
         </Modal>
     );
 }
-// <p>
-//     Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-//     dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-//     consectetur ac, vestibulum at eros.
-// </p>
 function ItemsList() {
     const [modalShow, setModalShow] = useState(false);
     const [modalShowData, setModalShowData] = useState({});
@@ -62,7 +56,6 @@ function ItemsList() {
         // return;
         setModalShowData(itemData);
         setModalShow(true)
-        console.log('modalShow: ' + modalShow)
     }
 
     return (
@@ -95,4 +88,4 @@ function ItemsList() {
     );
 }
 
-export default ItemsList;
+export default {ItemsList, MyVerticallyCenteredModal};

@@ -54,7 +54,6 @@ function ItemInfo({
 function Item({itemData,popupHandle,myStyles=null}) {
     const {image, name} = itemData;
 
-    console.log('styles: '+myStyles)
     function ph()
     {
         // console.log({...itemData})

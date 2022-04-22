@@ -19,10 +19,6 @@ class Auth {
             this.userData = ''
             this.token = ''
         }
-        console.log('actual in const: ' + localStorage.getItem('authenticated'))
-
-        console.log('in constructor: ' + this.authenticated)
-        console.log('in constructor: ' + this.userData)
 
     }
 
@@ -30,12 +26,12 @@ class Auth {
     // {
     //     this.token=token;
     // }
-    // setUserData(userData)
-    // {
-    //     this.userData=userData;
-    // }
+    setUserData(userData)
+    {
+        this.userData=JSON.parse(JSON.stringify(userData))
+        localStorage.setItem('userData', JSON.stringify(this.userData));
+    }
     async login(email, password) {
-        console.log('in login func')
         if (this.authenticated === false) {
             let temp = new CallApi()
             let res = null
@@ -47,7 +43,6 @@ class Auth {
                 }, apiUrl: 'mobileLogin'
             }).then(
                 resp => {
-                    console.log('asd:'+resp.toString())
                     if (resp.success===true) {
                         this.userData = resp.user;
                         this.token = resp.token;
@@ -56,14 +51,11 @@ class Auth {
                         localStorage.setItem('token', this.token.toString());
                         localStorage.setItem('userData', JSON.stringify(this.userData));
                     }
-                    console.log('end: '+resp.message)
                     return resp;
                 }
             ).catch(
                 error => {
                     err = error.data;
-                    console.log('error: ' + error.toString());
-                    console.log('err: ' + err);
                     return err
                 }
             )

@@ -6,17 +6,14 @@ import {useState} from "react";
 
 
 function NavigationBar({isAuth, setIsAuth}) {
-    // console.log('nav '+auth.isAuthenticated())
-    // console.log('nav ' + isAuth)
     function handleLogout()
     {
-        console.log('log Out handle')
         setIsAuth(false)
         auth.logout();
     }
     return (
         <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="#home">AYD</Navbar.Brand>
+            <Navbar.Brand href="/">AYD</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
 

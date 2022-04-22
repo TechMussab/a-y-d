@@ -11,7 +11,6 @@ class CallApi {
     }
 
     async postData({data, apiUrl}) {
-        console.log('in call api post')
         let res = await axios.post(this.Site+apiUrl, data).then(
             res=>{
                 return res.data;

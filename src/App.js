@@ -10,7 +10,6 @@ import ProtectedRoutes from "./ProtectedRoutes";
 
 function App() {
     const [isAuth, setIsAuth] = useState(auth.isAuthenticated());
-    console.log('App is userData: '+auth.userData)
     return (
         <div>
             <div>

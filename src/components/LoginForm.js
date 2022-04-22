@@ -21,14 +21,11 @@ function LoginForm({isAuth, setIsAuth}) {
         return email.length > 0 && password.length > 0;
     }
 
-    // console.log('in login auth?' + isAuth)
-    // console.log('in login ')
 
     async function handleSubmit(event) {
         event.preventDefault();
         let res =null
         res=await (auth.login(email, password))
-        console.log('after request done: '+res.success)
         if (!res.success) {
             setError(res.message)
         } else {
